@@ -6,9 +6,7 @@ import {
 } from '../service/docker'
 
 export const listContainer = async (req: Request) => {
-  const { status } = req.query as {
-    status: string
-  }
+  const { status } = req.query as { status: string }
   const containerList = await listAllContainers(status)
   return { containerList }
 }
